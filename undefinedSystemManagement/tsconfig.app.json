@@ -1,0 +1,45 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "compilerOptions": {
+      "module": "ESNext",
+      "target": "ESNext",
+  //    "useDefineForClassFields": true,
+      "moduleResolution": "node",
+    "strict": true,
+      "jsx": "preserve",
+      "strictNullChecks": false,
+      "sourceMap": true,
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
+      "strictFunctionTypes": false,
+      "lib": ["esnext", "dom"],
+      "noImplicitAny": false,
+    "baseUrl": ".",
+      "allowJs": true,
+      "experimentalDecorators": true,
+    "paths": {
+        "@/*": ["src/*"]
+      },
+      "types": ["node", "vite/client","vue","vue-router","pinia","@vueuse/core"],
+      "skipLibCheck": true,
+      "removeComments": true,
+      // 允许默认导入
+      "allowSyntheticDefaultImports": true,
+      "forceConsistentCasingInFileNames": true,
+      "noUnusedLocals": false,
+      
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/**/*.d.ts",
+    "vite.config.ts",
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.js",
+    "**/*.md"
+  ],
+}
