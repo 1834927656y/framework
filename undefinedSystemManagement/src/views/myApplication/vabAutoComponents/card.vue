@@ -1,32 +1,29 @@
 <template>
   <el-card 
     class="application-card" 
-    :body-style="{ padding: '10px' }"
+    :body-style="{ width: '100%', height: '100%', padding: '10px' }"
     shadow="hover"
     @click="handleClick"
   >
     <div class="card-content">
-      <!-- 应用图标和名称区域 -->
-      <div class="app-header">
-        <div class="app-icon">
-          <el-avatar 
-            :size="48" 
-            :src="icon" 
-            :icon="!icon ? 'Document' : undefined"
-          />
-        </div>
+      <!-- 应用图标 -->
+      <div class="app-icon">
+        <el-avatar 
+          :size="60" 
+          :src="icon" 
+          shape="circle"
+          fit="cover"
+        />
       </div>
-      
+      <!-- 应用介绍和名称区域 -->
       <div class="app-info">
-        <!-- 应用介绍 -->
         <h3 class="app-name">{{ title }}</h3>
         <el-tooltip
-            :content="description"
-            placement="top"
-            :show-after="500"
-            :hide-after="2000"
+          :content="description"
+          placement="top"
+          :popper-style="{maxWidth: '300px'}"
         >
-            <p class="app-description">{{ description }}</p>
+          <p class="app-description">{{ description }}</p>
         </el-tooltip>
       </div>
     </div>
@@ -66,6 +63,7 @@ const handleClick = () => {
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  background-color: #f8fbf8;
   
   // 渐变背景效果
   &::before {
@@ -103,25 +101,20 @@ const handleClick = () => {
   .card-content {
     position: relative;
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: row ;
-    gap: 12px;
-  }
-
-  .app-header {
-    display: flex;
-    align-items: center;
-    gap: 16px;
+    gap: 20px;
   }
 
   .app-icon {
-    flex-shrink: 0;
+    width: 28%;
+    height: 100%;
     .el-avatar {
       background-color: var(--el-color-primary-light-9);
       color: var(--el-color-primary);
-      border: 2px solid var(--el-color-primary-light-5);
+      margin-top: 26%;
       transition: all 0.3s ease;
-      
       &:hover {
         transform: scale(1.05);
       }
@@ -130,30 +123,27 @@ const handleClick = () => {
 
   .app-info {
     flex: 1;
-  }
-
-  .app-name {
-    margin: 0;
-    font-family: 'Microsoft YaHei', sans-serif;
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--el-text-color-primary);
-    line-height: 1.4;
-  }
-
-  .app-description {
-    margin: 0;
-    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--el-text-color-regular);
-    line-height: 1.6;
-    // 文本超出两行显示省略号
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
-    text-overflow: ellipsis;
+    .app-name {
+      font-family: 'Microsoft YaHei', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--el-text-color-primary);
+      height: 20%;
+      width: 100%;
+      margin-top: 8%;
+    }
+    .app-description {
+      width: 100%;
+      flex: 1;
+      font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--el-text-color-regular);
+      word-break: break-all; 
+    }
   }
 }
 </style>

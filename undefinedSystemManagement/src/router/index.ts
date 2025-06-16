@@ -48,6 +48,12 @@ export const constantRoutes : RouteRecordRaw[] = [
             component: () => import('@/views/index.vue'),
             name: 'index',
             meta: { title: '首页',Watermark: false }
+          },
+          {
+            path: 'Account',
+            component: () => import('@/views/myAccount/index.vue'),
+            name: 'Account',
+            meta: { title: '我的账户',Watermark: false }
           }
         ]
     },

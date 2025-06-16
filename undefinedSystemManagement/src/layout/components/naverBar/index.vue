@@ -15,7 +15,7 @@
       </el-input>
       <el-menu mode="horizontal" :router="true" :ellipsis="false" >
         <el-menu-item index="/my/Application">我的应用</el-menu-item>
-        <el-menu-item>我的账户</el-menu-item>
+        <el-menu-item index="/my/Account">我的账户</el-menu-item>
         <el-menu-item>后台管理</el-menu-item>
       </el-menu>
     </el-col>

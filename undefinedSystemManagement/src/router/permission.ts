@@ -5,7 +5,7 @@ NProgress.configure({
     showSpinner: true,
 })
 
-const whiteList = ['/login','/','/my/Application','/my/index']
+const whiteList = ['/login','/my/Application','/my/index','/my/Account']
 router.beforeEach(async (to, from, next) => {
     NProgress.start()
     if(getToken()){
@@ -26,7 +26,7 @@ router.beforeEach(async (to, from, next) => {
         
     }
     else{
-        next(`/login?redirect=${to.path}`)
+        next(`/my/Application?redirect=${to.path}`)
        
     }
 })
