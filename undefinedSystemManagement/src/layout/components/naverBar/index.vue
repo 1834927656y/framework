@@ -13,7 +13,7 @@
               <el-icon><Search /></el-icon>
             </template>
       </el-input>
-      <el-menu mode="horizontal" :router="true" :ellipsis="false" >
+      <el-menu mode="horizontal" :router="true" :ellipsis="false" :default-active="activeMenu">
         <el-menu-item index="/my/Application">我的应用</el-menu-item>
         <el-menu-item index="/my/Account">我的账户</el-menu-item>
         <el-menu-item>后台管理</el-menu-item>
@@ -46,9 +46,14 @@
 <script setup lang="ts">
 import { ArrowDown, User, SwitchButton } from '@element-plus/icons-vue'
 import { useAppStore } from '@/store/modules/app'
+import { useRoute } from 'vue-router'
 const appStore = useAppStore()
 const navBar = computed(() => appStore.navBar)
 const search = ref('')
+const route = useRoute()
+const activeMenu = computed(() => {
+  return route.path
+})
 </script>
 
 <style scoped lang="scss">

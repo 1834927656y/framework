@@ -7,8 +7,24 @@
 export {}
 declare global {
   const App: typeof import('vue')['App']
+  const Back: typeof import('gsap')['Back']
+  const Bounce: typeof import('gsap')['Bounce']
+  const Circ: typeof import('gsap')['Circ']
   const EffectScope: typeof import('vue')['EffectScope']
+  const Elastic: typeof import('gsap')['Elastic']
+  const Expo: typeof import('gsap')['Expo']
+  const Power1: typeof import('gsap')['Power1']
+  const Power2: typeof import('gsap')['Power2']
+  const Power3: typeof import('gsap')['Power3']
+  const Power4: typeof import('gsap')['Power4']
+  const RoughEase: typeof import('gsap')['RoughEase']
   const RouteRecordRaw: typeof import('vueRouter')['type']
+  const Sine: typeof import('gsap')['Sine']
+  const SlowMo: typeof import('gsap')['SlowMo']
+  const SteppedEase: typeof import('gsap')['SteppedEase']
+  const TimelineMax: typeof import('gsap')['TimelineMax']
+  const TweenLite: typeof import('gsap')['TweenLite']
+  const TweenMax: typeof import('gsap')['TweenMax']
   const acceptHMRUpdate: typeof import('pinia')['acceptHMRUpdate']
   const asyncComputed: typeof import('@vueuse/core')['asyncComputed']
   const autoResetRef: typeof import('@vueuse/core')['autoResetRef']
@@ -42,6 +58,7 @@ declare global {
   const getActivePinia: typeof import('pinia')['getActivePinia']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
+  const gsap: typeof import('gsap')['gsap']
   const h: typeof import('vue')['h']
   const ignorableWatch: typeof import('@vueuse/core')['ignorableWatch']
   const inject: typeof import('vue')['inject']
@@ -321,7 +338,23 @@ import { UnwrapRef } from 'vue'
 declare module 'vue' {
   interface GlobalComponents {}
   interface ComponentCustomProperties {
+    readonly Back: UnwrapRef<typeof import('gsap')['Back']>
+    readonly Bounce: UnwrapRef<typeof import('gsap')['Bounce']>
+    readonly Circ: UnwrapRef<typeof import('gsap')['Circ']>
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly Elastic: UnwrapRef<typeof import('gsap')['Elastic']>
+    readonly Expo: UnwrapRef<typeof import('gsap')['Expo']>
+    readonly Power1: UnwrapRef<typeof import('gsap')['Power1']>
+    readonly Power2: UnwrapRef<typeof import('gsap')['Power2']>
+    readonly Power3: UnwrapRef<typeof import('gsap')['Power3']>
+    readonly Power4: UnwrapRef<typeof import('gsap')['Power4']>
+    readonly RoughEase: UnwrapRef<typeof import('gsap')['RoughEase']>
+    readonly Sine: UnwrapRef<typeof import('gsap')['Sine']>
+    readonly SlowMo: UnwrapRef<typeof import('gsap')['SlowMo']>
+    readonly SteppedEase: UnwrapRef<typeof import('gsap')['SteppedEase']>
+    readonly TimelineMax: UnwrapRef<typeof import('gsap')['TimelineMax']>
+    readonly TweenLite: UnwrapRef<typeof import('gsap')['TweenLite']>
+    readonly TweenMax: UnwrapRef<typeof import('gsap')['TweenMax']>
     readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
@@ -355,6 +388,7 @@ declare module 'vue' {
     readonly getActivePinia: UnwrapRef<typeof import('pinia')['getActivePinia']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
+    readonly gsap: UnwrapRef<typeof import('gsap')['gsap']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
     readonly ignorableWatch: UnwrapRef<typeof import('@vueuse/core')['ignorableWatch']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>

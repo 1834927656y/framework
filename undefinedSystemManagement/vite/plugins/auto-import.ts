@@ -9,6 +9,27 @@ export default (path: any) => {
       'vue-router',
       'pinia',
       '@vueuse/core',
+      {
+        'gsap': [
+          'gsap',
+          'TimelineMax',
+          'TweenMax',
+          'TweenLite',
+          'Power1',
+          'Power2',
+          'Power3',
+          'Power4',
+          'Back',
+          'Elastic',
+          'Bounce',
+          'RoughEase',
+          'SlowMo',
+          'SteppedEase',
+          'Circ',
+          'Expo',
+          'Sine'
+        ]
+      }
     ],
     resolvers: [
         ElementPlusResolver(),
