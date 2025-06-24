@@ -5,7 +5,7 @@ NProgress.configure({
     showSpinner: true,
 })
 
-const whiteList = ['/login','/my/Application','/my/index','/my/Account']
+const whiteList = ['/login','/my/Application','/my/index','/my/Account','/myGsapStudy/unit1']
 router.beforeEach(async (to, from, next) => {
     NProgress.start()
     if(getToken()){

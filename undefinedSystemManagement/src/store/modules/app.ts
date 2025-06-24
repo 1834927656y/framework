@@ -29,5 +29,7 @@ export const useAppStore = defineStore('app',() => {
     navBar,
     tagsView,
     setSidebar,
+    setNavBar,
+    setTagsView,
   }
 })

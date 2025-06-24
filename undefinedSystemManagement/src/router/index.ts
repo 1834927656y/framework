@@ -57,6 +57,19 @@ export const constantRoutes : RouteRecordRaw[] = [
           }
         ]
     },
+    {
+      path: '/myGsapStudy',
+      component: Layout,
+      hidden: true,
+      children: [
+        {
+          path: 'unit1',
+          component: () => import('@/views/myGsapStudy/unit1/index.vue'),
+          name: 'unit1',
+          meta: { title: 'GSAP学习',Watermark: false }
+        }
+      ]
+    }
 ]
 
 export const dynamicRoutes : RouteRecordRaw[] = [
