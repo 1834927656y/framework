@@ -3,6 +3,7 @@ import type { UserConfig, ConfigEnv } from 'vite'
 import createVitePlugins from './vite/plugins'
 import path from 'path'
 
+
 export default defineConfig(({ mode, command }: ConfigEnv): UserConfig => {
   const env = loadEnv(mode, process.cwd())
   return {

@@ -36,6 +36,9 @@
             <el-dropdown-item divided>
               <el-icon><switch-button /></el-icon>退出登录
             </el-dropdown-item>
+            <el-dropdown-item divided @click="switchLanguage">
+              <el-icon><Refresh /></el-icon>切换语言
+            </el-dropdown-item>
           </el-dropdown-menu>
         </template>
       </el-dropdown>
@@ -47,6 +50,9 @@
 import { ArrowDown, User, SwitchButton } from '@element-plus/icons-vue'
 import { useAppStore } from '@/store/modules/app'
 import { useRoute } from 'vue-router'
+import { useI18n } from 'vue-i18n'
+const {locale} = useI18n()
+
 const appStore = useAppStore()
 const navBar = computed(() => appStore.navBar)
 const search = ref('')
@@ -54,6 +60,10 @@ const route = useRoute()
 const activeMenu = computed(() => {
   return route.path
 })
+
+const switchLanguage = () => {
+  locale.value = locale.value === 'zhCN' ? 'en' : 'zhCN'
+}
 </script>
 
 <style scoped lang="scss">

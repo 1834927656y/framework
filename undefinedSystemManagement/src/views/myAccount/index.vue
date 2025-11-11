@@ -2,7 +2,7 @@
   <div style="width: 100%;height: 100%;padding: 20px;box-sizing: border-box;">
     <el-card class="box-card">
       <template #header>
-        <span style="font-size: 20px;font-weight: 600;">我的账户</span>
+        <span style="font-size: 20px;font-weight: 600;">{{ $t('myAccount.title') }}</span>
       </template>
       
       <el-row :gutter="20">
@@ -11,7 +11,7 @@
           <el-card class="user-card">
             <template #header>
               <div class="clearfix">
-                <span>个人信息</span>
+                <span>{{ $t('myAccount.userInfo.title') }}</span>
               </div>
             </template>
             <div>
@@ -20,7 +20,7 @@
               </div>
               <ul class="list-group">
                 <li class="list-group-item">
-                  <el-icon><User /></el-icon>用户名称
+                  <el-icon><User /></el-icon>{{ $ts('用户名称') }}
                   <div class="pull-right">admin</div>
                 </li>
                 <li class="list-group-item">
@@ -57,7 +57,7 @@
               </div>
             </template>
             <el-tabs v-model="activeTab">
-              <el-tab-pane label="基本资料" name="userinfo">
+              <el-tab-pane :label="$t('myAccount.userInfo.title')" name="userinfo">
                 <el-form :model="userForm" label-width="100px">
                   <el-form-item label="用户昵称">
                     <el-input v-model="userForm.nickName" />
