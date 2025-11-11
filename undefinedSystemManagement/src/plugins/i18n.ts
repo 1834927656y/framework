@@ -30,6 +30,6 @@ const chinese = ( key: string) => {
       body: JSON.stringify({ query: key, from: 'auto', to: 'zhCN' })
     }).then(res => res.json()).then(res => res.trans_result[0].dst)
 }
-
+export { english, chinese }
 
 export default i18n
