@@ -24,23 +24,23 @@
                   <div class="pull-right">admin</div>
                 </li>
                 <li class="list-group-item">
-                  <el-icon><Phone /></el-icon>手机号码
+                  <el-icon><Phone /></el-icon>{{ $ts('手机号码') }}
                   <div class="pull-right">13800138000</div>
                 </li>
                 <li class="list-group-item">
-                  <el-icon><Message /></el-icon>用户邮箱
+                  <el-icon><Message /></el-icon>{{ $ts('用户邮箱') }}
                   <div class="pull-right">admin@example.com</div>
                 </li>
                 <li class="list-group-item">
-                  <el-icon><Office /></el-icon>所属部门
+                  <el-icon><Office /></el-icon>{{ $ts('所属部门') }}
                   <div class="pull-right">研发部 / 开发组</div>
                 </li>
                 <li class="list-group-item">
-                  <el-icon><UserFilled /></el-icon>所属角色
+                  <el-icon><UserFilled /></el-icon>{{ $ts('所属角色') }}
                   <div class="pull-right">管理员</div>
                 </li>
                 <li class="list-group-item">
-                  <el-icon><Calendar /></el-icon>创建日期
+                  <el-icon><Calendar /></el-icon>{{ $ts('创建日期') }}
                   <div class="pull-right">2024-01-01</div>
                 </li>
               </ul>
@@ -53,70 +53,70 @@
           <el-card>
             <template #header>
               <div class="clearfix">
-                <span>基本资料</span>
+                <span>{{ $ts('基本资料') }}</span>
               </div>
             </template>
             <el-tabs v-model="activeTab">
               <el-tab-pane :label="$t('myAccount.userInfo.title')" name="userinfo">
                 <el-form :model="userForm" label-width="100px">
-                  <el-form-item label="用户昵称">
+                  <el-form-item :label="$ts('用户昵称')">
                     <el-input v-model="userForm.nickName" />
                   </el-form-item>
-                  <el-form-item label="手机号码">
+                  <el-form-item :label="$ts('手机号码')">
                     <el-input v-model="userForm.phonenumber" />
                   </el-form-item>
-                  <el-form-item label="邮箱">
+                  <el-form-item :label="$ts('邮箱')">
                     <el-input v-model="userForm.email" />
                   </el-form-item>
                   <el-form-item>
-                    <el-button type="primary">保存</el-button>
+                    <el-button type="primary">{{ $ts('保存') }}</el-button>
                   </el-form-item>
                 </el-form>
               </el-tab-pane>
-              <el-tab-pane label="修改密码" name="resetPwd">
+              <el-tab-pane :label=" $ts('修改密码')" name="resetPwd">
                 <el-form :model="passwordForm" label-width="100px">
-                  <el-form-item label="旧密码">
+                  <el-form-item :label="$ts('旧密码')">
                     <el-input v-model="passwordForm.oldPassword" type="password" />
                   </el-form-item>
-                  <el-form-item label="新密码">
+                  <el-form-item :label="$ts('新密码')">
                     <el-input v-model="passwordForm.newPassword" type="password" />
                   </el-form-item>
-                  <el-form-item label="确认密码">
+                  <el-form-item :label="$ts('确认密码')">
                     <el-input v-model="passwordForm.confirmPassword" type="password" />
                   </el-form-item>
                   <el-form-item>
-                    <el-button type="primary">保存</el-button>
+                    <el-button type="primary">{{ $ts('保存') }}</el-button>
                   </el-form-item>
                 </el-form>
               </el-tab-pane>
-              <el-tab-pane label="第三方应用" name="thirdParty">
+              <el-tab-pane :label="$ts('第三方应用')" name="thirdParty">
                 <el-table :data="thirdPartyList">
-                  <el-table-column prop="name" label="应用名称" />
-                  <el-table-column prop="status" label="状态">
+                  <el-table-column prop="name" :label="$ts('应用名称')" />
+                  <el-table-column prop="status" :label="$ts('状态')">
                     <template #default="{ row }">
                       <el-tag :type="row.status ? 'success' : 'info'">
-                        {{ row.status ? '已绑定' : '未绑定' }}
+                        {{ row.status ? $ts('已绑定') : $ts('未绑定')  }}
                       </el-tag>
                     </template>
                   </el-table-column>
-                  <el-table-column label="操作">
+                  <el-table-column :label="$ts('操作')">
                     <template #default="{ row }">
                       <el-button :type="row.status ? 'danger' : 'primary'" size="small">
-                        {{ row.status ? '解绑' : '绑定' }}
+                        {{ row.status ? $ts('解绑') : $ts('绑定') }}
                       </el-button>
                     </template>
                   </el-table-column>
                 </el-table>
               </el-tab-pane>
-              <el-tab-pane label="在线设备" name="onlineDevice">
+                <el-tab-pane :label="$ts('在线设备')" name="onlineDevice">
                 <el-table :data="deviceList">
-                  <el-table-column prop="deviceName" label="设备名称" />
-                  <el-table-column prop="loginTime" label="登录时间" />
-                  <el-table-column prop="ip" label="登录IP" />
-                  <el-table-column prop="location" label="登录地点" />
-                  <el-table-column label="操作">
+                  <el-table-column prop="deviceName" :label="$ts('设备名称')" />
+                  <el-table-column prop="loginTime" :label="$ts('登录时间')" />
+                  <el-table-column prop="ip" :label="$ts('登录IP')" />
+                  <el-table-column prop="location" :label="$ts('登录地点')" />
+                  <el-table-column :label="$ts('操作')">
                     <template #default>
-                      <el-button type="danger" size="small">强制下线</el-button>
+                      <el-button type="danger" size="small">{{ $ts('强制下线') }}</el-button>
                     </template>
                   </el-table-column>
                 </el-table>
