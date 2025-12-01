@@ -69,6 +69,19 @@ export const constantRoutes : RouteRecordRaw[] = [
           meta: { title: 'GSAP学习',Watermark: false }
         }
       ]
+    },
+    {
+      path: '/myGsapStudy',
+      component: Layout,
+      hidden: true,
+      children: [
+        {
+          path: 'unit2',
+          component: () => import('@/views/myGsapStudy/unit2/index.vue'),
+          name: 'unit2',
+          meta: { title: 'GSAP学习',Watermark: false }
+        }
+      ]
     }
 ]
 

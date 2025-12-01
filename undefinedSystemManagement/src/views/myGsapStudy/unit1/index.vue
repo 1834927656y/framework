@@ -53,6 +53,10 @@ const menuList = ref([
   {
     title: 'EASE',
     path: 'MyGsapStudyUnit1Ease'
+  },
+  {
+    title: 'Staggers',
+    path: 'MyGsapStudyUnit1Staggers'
   }
 ])
 const handleClick = (item: any) => {

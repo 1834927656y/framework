@@ -8,6 +8,13 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 
+let obj = { myNum: 10, myColor: "red" };
+gsap.to(obj, {
+  myNum: 200,
+  myColor: "blue",
+  onUpdate: () => console.log(obj.myNum, obj.myColor)
+});
+
 onMounted(() => {
   gsap.to('.circle', {
     attr: {

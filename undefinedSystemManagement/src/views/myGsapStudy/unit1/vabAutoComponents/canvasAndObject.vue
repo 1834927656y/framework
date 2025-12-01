@@ -25,7 +25,7 @@ onMounted(() => {
     return;
   }
   
-  console.log('Canvas 初始化完成');
+  // console.log('Canvas 初始化完成');
   
   // 初始绘制
   ctx.value.fillStyle = cssObject.fillColor
@@ -36,7 +36,7 @@ onMounted(() => {
     cssObject.fillRect.height
   )
   
-  console.log('初始绘制完成');
+  // console.log('初始绘制完成');
 
   // 动画 reactive 对象
   gsap.to(cssObject, {
@@ -45,16 +45,10 @@ onMounted(() => {
     repeat: -1,
     yoyo: true,
     onUpdate: () => {
-      console.log('onUpdate 被调用');
-      console.log('当前颜色:', cssObject.fillColor);
-      console.log('当前位置:', cssObject.fillRect);
-      
       // 确保 ctx 存在
       if (!ctx.value) return;
-      
       // 清除画布
       ctx.value.clearRect(0, 0, 300, 300);
-      
       // 重新绘制
       ctx.value.fillStyle = cssObject.fillColor
       ctx.value.fillRect(
@@ -63,8 +57,6 @@ onMounted(() => {
         cssObject.fillRect.width, 
         cssObject.fillRect.height
       )
-      
-      console.log('重绘完成');
     }
   })
   gsap.to(cssObject.fillRect, {
@@ -72,10 +64,10 @@ onMounted(() => {
     y: 100,
     duration: 3,
     repeat: -1,
-    // yoyo: true,
+    yoyo: true,
     ease: 'power1.inOut',
     onUpdate: () => {
-      console.log('onUpdate 被调用');
+      // console.log('onUpdate 被调用');
     }
   })
 })
