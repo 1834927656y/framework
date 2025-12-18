@@ -1,3 +1,5 @@
+/// <reference types="vite/client" />
+/// <reference types="./auto-imports" />
 declare module '*.vue' {
   import { DefineComponent } from 'vue';
   const Component: DefineComponent<{}, {}, any>;
