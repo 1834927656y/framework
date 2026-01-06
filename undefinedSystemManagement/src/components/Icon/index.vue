@@ -10,8 +10,8 @@
   
   <script setup lang="ts">
 //   import { computed, ref, watch, onMounted } from 'vue'
-//   import { useIconStore } from '@/utils/iconLoader'
-//   import type { IconProps } from '@/types/icon'
+  import { useIconStore } from '@/utils/iconLoader'
+  import type { IconProps } from '@/types/icon'
   
   const props = defineProps({
     name: '',
