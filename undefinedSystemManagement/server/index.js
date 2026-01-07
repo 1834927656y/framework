@@ -8,7 +8,7 @@ dotenv.config()
 
 const app = express()
 app.use(express.json())
-app.use(cors({ origin: 'http://localhost:5173' }))
+app.use(cors({ origin: 'http://172.16.20.230:5173' }))
 
 const { BAIDU_APP_ID, BAIDU_KEY } = process.env
 const BAIDU_API = 'https://api.fanyi.baidu.com/api/trans/vip/translate'

@@ -14,6 +14,14 @@ export default defineConfig(({ mode, command }: ConfigEnv): UserConfig => {
       },
       extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue']
     },
+    server: {
+      proxy: {
+        '/translate': {
+          target: env.VITE_TRANSLATE_API_URL ,
+          changeOrigin: true,
+        }
+      }
+    },
     plugins: [createVitePlugins(env, command === 'build')],
     // 预编译
     optimizeDeps: {

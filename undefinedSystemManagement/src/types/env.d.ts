@@ -20,6 +20,7 @@ interface ImportMetaEnv {
     VITE_APP_CLIENT_ID: string;
     VITE_APP_WEBSOCKET: string;
     VITE_APP_SSE: string;
+    VITE_TRANSLATE_API_URL: string; 
   }
   interface ImportMeta {
     readonly env: ImportMetaEnv;
