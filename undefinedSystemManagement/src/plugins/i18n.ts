@@ -38,7 +38,7 @@ const english = (key: string) => {
 const chinese = (key: string) => {
   return /[\u4e00-\u9fa5]/.test(key)
   ? Promise.resolve(key)
-  : fetch('http://localhost:3000/translate', {
+  : fetch(import.meta.env.VITE_TRANSLATE_API_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ query: key, from: 'auto', to: 'zhCN' })

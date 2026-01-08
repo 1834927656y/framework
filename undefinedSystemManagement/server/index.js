@@ -8,8 +8,7 @@ dotenv.config()
 
 const app = express()
 app.use(express.json())
-app.use(cors({ origin: 'http://172.16.20.230:5173' }))
-
+app.use(cors({ origin: true, credentials: true }))
 const { BAIDU_APP_ID, BAIDU_KEY } = process.env
 const BAIDU_API = 'https://api.fanyi.baidu.com/api/trans/vip/translate'
 
@@ -24,6 +23,9 @@ function sign(q, salt) {
 
 app.post('/translate', async (req, res) => {
   try {
+    // 再次确保 CORS 头被设置
+    res.header('Access-Control-Allow-Origin', '*')
+    
     const { query, from = 'auto', to = 'en' } = req.body
     if (!query) return res.status(400).json({ message: 'query 必填' })
 
@@ -48,6 +50,4 @@ app.post('/translate', async (req, res) => {
   }
 })
 
-app.listen(3000, () => {
-  console.log('Proxy server running at http://localhost:3000')
-})
+app.listen(3000, '0.0.0.0')
