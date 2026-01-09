@@ -39,6 +39,9 @@
             <el-dropdown-item divided @click="switchLanguage">
               <el-icon><Refresh /></el-icon>切换语言
             </el-dropdown-item>
+            <el-dropdown-item divided @click="screenshot">
+              <el-icon><FullScreen /></el-icon>截图
+            </el-dropdown-item>
           </el-dropdown-menu>
         </template>
       </el-dropdown>
